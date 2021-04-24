@@ -13,7 +13,7 @@ class CreatePedidosTable extends Migration
      */
     public function up()
     {
-        Schema::create('_pedidos', function (Blueprint $table) {
+        Schema::create('pedidos', function (Blueprint $table) {
             $table->id("idped");
             $table->integer("idcurso");
             $table->integer("idusu");
@@ -28,6 +28,6 @@ class CreatePedidosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('_pedidos');
+        Schema::dropIfExists('pedidos');
     }
 }

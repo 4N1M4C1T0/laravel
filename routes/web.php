@@ -19,16 +19,16 @@ use App\Models\Usuario;
 Route::view('/', "welcome");
 
 Route::get('/usuarioqr', function () {
-    $resultados = DB::select("select * from Usuarios");
+    $resultados = DB::select("select * from Usuario");
     dd($resultados);
 });
 
-Route::get('/usuarioqb', function () {
-    $resultados = DB::table("Usuarios")->where("idusu",1)->value("correo");
+Route::get('/cursoqr', function () {
+    $resultados = DB::select("select * from Curso");
     dd($resultados);
 });
 
-Route::get('/usuariolq', function () {
-    $resultados = Usuario::all();
+Route::get('/pedidoqr', function () {
+    $resultados = DB::select("select * from Pedido");
     dd($resultados);
 });
