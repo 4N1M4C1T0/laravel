@@ -15,9 +15,14 @@ class CreatePedidosTable extends Migration
     {
         Schema::create('pedidos', function (Blueprint $table) {
             $table->id("idped");
-            $table->integer("idcurso");
-            $table->integer("idusu");
             $table->decimal("importe_total",10,2);
+        });
+
+        Schema::table('pedidos', function (Blueprint $table){
+            $table->unsignedBigInteger("idcurso");
+            $table->unsignedBigInteger("idusu");
+            $table->foreign("idcurso")->references("idcurso")->on("cursos");
+            $table->foreign("idusu")->references("idusu")->on("usuarios");
         });
     }
 

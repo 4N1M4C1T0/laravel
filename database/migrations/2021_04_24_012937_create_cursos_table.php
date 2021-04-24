@@ -15,10 +15,14 @@ class CreateCursosTable extends Migration
     {
         Schema::create('cursos', function (Blueprint $table) {
             $table->id("idcurso");
-            $table->integer("idusu");
             $table->string("nombre_curso",40);
             $table->string("biografia_curso",1000);
             $table->decimal("precio",10,2);
+        });
+
+        Schema::table('cursos', function (Blueprint $table){
+            $table->unsignedBigInteger("idusu");
+            $table->foreign("idusu")->references("idusu")->on("usuarios");
         });
     }
 
