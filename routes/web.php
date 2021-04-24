@@ -3,7 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\UsuarioController;
+use App\Http\Controllers\CursoController;
+use App\Http\Controllers\PedidoController;
 use App\Models\Usuario;
+use App\Models\Curso;
+use App\Models\Pedido;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,17 +22,16 @@ use App\Models\Usuario;
 
 Route::view('/', "welcome");
 
-Route::get('/usuarioqr', function () {
-    $resultados = DB::select("select * from Usuario");
-    dd($resultados);
-});
 
-Route::get('/cursoqr', function () {
-    $resultados = DB::select("select * from Curso");
-    dd($resultados);
-});
+Route::view("/usuario","usuario");
+Route::post("/usu", [UsuarioController::class,"guardar"])->name("Guardar Usuario");
+Route::get("/mosusu",  [UsuarioController::class,"mostrar"]);
 
-Route::get('/pedidoqr', function () {
-    $resultados = DB::select("select * from Pedido");
-    dd($resultados);
-});
+
+Route::view("/curso","curso");
+Route::post("/cur",[CursoController::class,"guardar"])->name("Guardar Curso");
+Route::get("/moscur",[CursoController::class,"mostrar"]);
+
+Route::view("/pedido","pedido");
+Route::post("/ped", [PedidoController::class,"guardar"])->name("Guardar pedido");
+Route::get("/mosped", [PedidoController::class,"mostrar"]);
