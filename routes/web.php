@@ -20,10 +20,14 @@ use App\Models\Pedido;
 |
 */
 
-Route::view('/', "welcome");
+Route::view('/', "layout");
 
 
 Route::view("/usuario","usuario");
+Route::get("/usuario/{idcolumna}", function (int $idcolumna){
+    return view("usuario")->with("idc",$idcolumna);
+});
+
 Route::post("/usu", [UsuarioController::class,"guardar"])->name("Guardar Usuario");
 Route::get("/mosusu",  [UsuarioController::class,"mostrar"]);
 

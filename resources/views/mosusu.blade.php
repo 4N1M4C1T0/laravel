@@ -1,4 +1,6 @@
+@extends("layout")
 
+@section("Contenido")
     <section>
         @foreach($resultado as $usuario)
         <label>TIPO DE USUARIO:  {{$usuario["tipo_usu"]}}</label><br>
@@ -10,3 +12,4 @@
         @endforeach
     </section>
 
+@endsection
