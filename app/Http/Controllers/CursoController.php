@@ -19,7 +19,7 @@ class CursoController extends Controller
     }
 
     public function mostrar(){
-        $resultado = Curso::where("idcurso",1)->get();
+        $resultado = Curso::where("id",1)->get();
         return view("moscur",["resultado"=>$resultado]);
     }
 }

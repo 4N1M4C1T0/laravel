@@ -14,7 +14,7 @@
         <input type="text" name="nombre" size="40" placeholder="Nombre">
         <input type="email" name="correo" placeholder="email">
         <input type="password" name="contrasenia" placeholder="password">
-        <input type="number" name="dni" min="1900" placeholder="DNI">
+        <input type="number" name="dni" placeholder="DNI">
         <input type="text" name="direccion" placeholder="Direccion">
         <input type="submit" name="submit" value="Guardar">
     </form>

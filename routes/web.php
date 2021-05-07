@@ -28,14 +28,16 @@ Route::get("/usuario/{idcolumna}", function (int $idcolumna){
     return view("usuario")->with("idc",$idcolumna);
 });
 
-Route::post("/usu", [UsuarioController::class,"guardar"])->name("Guardar Usuario");
+Route::post("/usu", [UsuarioController::class,"guardar"]);
 Route::get("/mosusu",  [UsuarioController::class,"mostrar"]);
+Route::get("/actusu/{id}",  [UsuarioController::class,"mostrarUsu"],["id"=>"id"]);
+Route::post("/actusu", [UsuarioController::class,"actualizar"]);
 
 
 Route::view("/curso","curso");
-Route::post("/cur",[CursoController::class,"guardar"])->name("Guardar Curso");
+Route::post("/cur",[CursoController::class,"guardar"]);
 Route::get("/moscur",[CursoController::class,"mostrar"]);
 
 Route::view("/pedido","pedido");
-Route::post("/ped", [PedidoController::class,"guardar"])->name("Guardar pedido");
+Route::post("/ped", [PedidoController::class,"guardar"]);
 Route::get("/mosped", [PedidoController::class,"mostrar"]);
