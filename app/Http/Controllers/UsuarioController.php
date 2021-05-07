@@ -55,4 +55,16 @@ class UsuarioController extends Controller
 
     }
 
+    public function mostrarUsua(int $id)
+    {
+        $resultado = Usuario::where("id", $id)->first();
+        return view("delusu", ["resultado" => $resultado]);
+    }
+
+    Public function eliminar(Request $request){
+        $usuario=Usuario::findOrFail($request->id);
+         $usuario->delete();
+         return redirect("/mosusu");
+    }
+
 }

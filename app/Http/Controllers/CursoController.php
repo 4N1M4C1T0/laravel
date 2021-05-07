@@ -46,4 +46,16 @@ class CursoController extends Controller
         return redirect("/moscur");
 
     }
+
+    public function mostrarCurs(int $id)
+    {
+        $resultado = Curso::where("id", $id)->first();
+        return view("delcur", ["resultado" => $resultado]);
+    }
+
+    Public function eliminar(Request $request){
+        $usuario=Curso::findOrFail($request->id);
+        $usuario->delete();
+        return redirect("/moscur");
+    }
 }

@@ -34,6 +34,8 @@ Route::post("/usu", [UsuarioController::class,"guardar"]);
 Route::get("/mosusu",  [UsuarioController::class,"mostrar"]);
 Route::get("/actusu/{id}",  [UsuarioController::class,"mostrarUsu"],["id"=>"id"]);
 Route::post("/actusu", [UsuarioController::class,"actualizar"]);
+Route::get("/delusu/{id}",  [UsuarioController::class,"mostrarUsua"],["id"=>"id"]);
+Route::post("/delusu", [UsuarioController::class,"eliminar"]);
 
 
 Route::view("/curso","curso");
@@ -44,7 +46,8 @@ Route::post("/cur",[CursoController::class,"guardar"]);
 Route::get("/moscur",[CursoController::class,"mostrar"]);
 Route::get("/actcur/{id}",  [CursoController::class,"mostrarCur"],["id"=>"id"]);
 Route::post("/actcur", [CursoController::class,"actualizar"]);
-
+Route::get("/delcur/{id}",  [CursoController::class,"mostrarCurs"],["id"=>"id"]);
+Route::post("/delcur", [CursoController::class,"eliminar"]);
 
 
 Route::view("/pedido","pedido");
