@@ -1,4 +1,3 @@
-@include(\http\Env\Request::class)
 
 <!DOCTYPE html>
 <html lang="es">
