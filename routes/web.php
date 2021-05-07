@@ -53,3 +53,7 @@ Route::post("/delcur", [CursoController::class,"eliminar"]);
 Route::view("/pedido","pedido");
 Route::post("/ped", [PedidoController::class,"guardar"]);
 Route::get("/mosped", [PedidoController::class,"mostrar"]);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
