@@ -18,7 +18,7 @@ class PedidoController extends Controller
     }
 
     public function mostrar(){
-        $resultado = Pedido::where("id",1)->get();
+        $resultado = Pedido::all();
         return view("mosped",["resultado"=>$resultado]);
     }
 }

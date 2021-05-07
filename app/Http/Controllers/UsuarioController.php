@@ -9,9 +9,17 @@ class UsuarioController extends Controller
 {
     public function guardar(Request $data)
     {
+        $data->validate(
+            ['tipo_usu' => 'required',
+                'nombre_usu'=> 'required | alpha',
+                'correo' => 'required',
+                'contrasenia' => 'required | min:4 | max:32',
+                'dni' => 'required | min:8',
+                'direccion' => 'required']
+        );
         $usuario = new Usuario();
         $usuario->tipo_usu = $data["tipo_usu"];
-        $usuario->nombre_usu = $data["nombre"];
+        $usuario->nombre_usu = $data["nombre_usu"];
         $usuario->correo = $data["correo"];
         $usuario->contrasenia = $data["contrasenia"];
         $usuario->dni = $data["dni"];
@@ -23,7 +31,7 @@ class UsuarioController extends Controller
 
     public function mostrar()
     {
-        $resultado = Usuario::where("id", 1)->get();
+        $resultado = Usuario::all();
         return view("mosusu", ["resultado" => $resultado]);
     }
 
@@ -46,4 +54,5 @@ class UsuarioController extends Controller
         return redirect("/mosusu");
 
     }
+
 }

@@ -8,6 +8,12 @@ use App\Models\Curso;
 class CursoController extends Controller
 {
     public function guardar(Request $data1){
+        $data1->validate(
+            ['nombre_curso' => 'required',
+                'biografia_curso'=> 'required',
+                'precio' => 'required',
+                'idusu' => 'required']
+        );
         $curso = new Curso();
         $curso->nombre_curso = $data1["nombre_curso"];
         $curso->biografia_curso = $data1["biografia_curso"];
@@ -19,7 +25,7 @@ class CursoController extends Controller
     }
 
     public function mostrar(){
-        $resultado = Curso::where("id",1)->get();
+        $resultado = Curso::all();
         return view("moscur",["resultado"=>$resultado]);
     }
 

@@ -10,7 +10,7 @@
         <label>PASSWORD: {{$usuario["contrasenia"]}}</label><br>
         <label>DNI: {{$usuario["dni"]}}</label><br>
         <label>DIRECCION: {{$usuario["direccion"]}}</label><br>
-            <a href="actusu/{{$usuario["id"]}}" >Actualizar</a>
+            <a href="actusu/{{$usuario["id"]}}" >Actualizar</a><br><br>
         @endforeach
     </section>
 
