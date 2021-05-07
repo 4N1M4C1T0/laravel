@@ -43,7 +43,7 @@ class UsuarioController extends Controller
         $usuario->dni = $request->dni;
         $usuario->direccion = $request->direccion;
         $usuario->save();
-        return "actualizado";
+        return redirect("/mosusu");
 
     }
 }

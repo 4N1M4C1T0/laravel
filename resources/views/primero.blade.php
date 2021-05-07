@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -15,17 +14,13 @@
 </head>
 
 <body style="background-color: darkgray">
-<nav>
-    <a href="/" class=={{Request::path()=="/"?"actual":""}}>INICIO</a>
-    <a href="/usuario/1" class={{ Request::path()=="/usuario/1"?"actual":"" }}>INGRESAR</a>
-    <a href="/mosusu" class={{ Request::path()=="/mosusu"?"actual":"" }}>VER USUARIOS</a>
 
-</nav>
 <header>
-    <h1>Sistema de usuarios</h1>
+    <h1>SISTEMA GENERAL</h1>
 </header>
 <section>
-    @yield("Contenido")
+    <a href="layout" class={{ Request::path()=="/layout"?"actual":""}}>USUARIOS</a><br>
+    <a href="layout1" class={{ Request::path()=="/layout1"?"actual":""}}>CURSOS</a>
 </section>
 </body>
 </html>
