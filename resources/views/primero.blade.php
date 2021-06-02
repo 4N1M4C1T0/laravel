@@ -20,7 +20,8 @@
 </header>
 <section>
     <a href="layout" class={{ Request::path()=="/layout"?"actual":""}}>USUARIOS</a><br>
-    <a href="layout1" class={{ Request::path()=="/layout1"?"actual":""}}>CURSOS</a>
+    <a href="layout1" class={{ Request::path()=="/layout1"?"actual":""}}>CURSOS</a><br>
+    <a href="layout2" class={{ Request::path()=="/layout2"?"actual":""}}>PEDIDOS</a>
 </section>
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>

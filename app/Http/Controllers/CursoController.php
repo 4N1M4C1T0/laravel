@@ -37,6 +37,13 @@ class CursoController extends Controller
 
     public function actualizar(Request $request)
     {
+        $request->validate(
+            ['nombre_curso' => 'required',
+                'biografia_curso'=> 'required',
+                'precio' => 'required',
+                'idusu' => 'required']
+        );
+
         $curso = Curso::find($request->id);
         $curso->nombre_curso = $request->nombre_curso;
         $curso->biografia_curso = $request->biografia_curso;
@@ -54,8 +61,8 @@ class CursoController extends Controller
     }
 
     Public function eliminar(Request $request){
-        $usuario=Curso::findOrFail($request->id);
-        $usuario->delete();
+        $curso=Curso::findOrFail($request->id);
+        $curso->delete();
         return redirect("/moscur");
     }
 }

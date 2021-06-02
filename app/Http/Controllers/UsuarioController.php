@@ -43,6 +43,14 @@ class UsuarioController extends Controller
 
     public function actualizar(Request $request)
     {
+        $request->validate(
+            ['tipo_usu' => 'required',
+                'nombre_usu'=> 'required | alpha',
+                'correo' => 'required',
+                'contrasenia' => 'required | min:4 | max:32',
+                'dni' => 'required | min:8',
+                'direccion' => 'required']
+        );
         $usuario = Usuario::find($request->id);
         $usuario->tipo_usu = $request->tipo_usu;
         $usuario->nombre_usu = $request->nombre_usu;

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <title>CURSOS</title>
+    <title>PEDIDOS</title>
     <meta charset="utf-8" />
-    <meta name="description" content="Funciones del curso">
+    <meta name="description" content="Funciones del pedido">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
     <style>
         .actual{
@@ -16,12 +16,12 @@
 <body style="background-color: darkgray">
 <nav>
     <a href="/" class=={{Request::path()=="/"?"actual":""}}>INICIO</a>
-    <a href="/curso/1" class={{ Request::path()=="/curso/1"?"actual":"" }}>INGRESAR</a>
-    <a href="/moscur" class={{ Request::path()=="/moscur"?"actual":"" }}>VER CURSOS</a>
+    <a href="/pedido/1" class={{ Request::path()=="/pedido/1"?"actual":"" }}>INGRESAR</a>
+    <a href="/mosped" class={{ Request::path()=="/mosped"?"actual":"" }}>VER PEDIDOS</a>
 
 </nav>
 <header>
-    <h1>Sistema de cursos</h1>
+    <h1>Sistema de pedidos</h1>
 </header>
 <section>
     @yield("Contenido")

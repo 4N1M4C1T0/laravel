@@ -23,7 +23,7 @@ use App\Models\Pedido;
 Route::view('/', "primero");
 Route::view("/layout","layout");
 Route::view("/layout1","layout1");
-
+Route::view("/layout2","layout2");
 
 
 Route::view("/usuario","usuario");
@@ -51,8 +51,16 @@ Route::post("/delcur", [CursoController::class,"eliminar"]);
 
 
 Route::view("/pedido","pedido");
+Route::get("/pedido/{idcolumna}", function (int $idcolumna){
+    return view("pedido")->with("idc",$idcolumna);
+});
 Route::post("/ped", [PedidoController::class,"guardar"]);
 Route::get("/mosped", [PedidoController::class,"mostrar"]);
+Route::get("/actped/{id}",  [PedidoController::class,"mostrarPed"],["id"=>"id"]);
+Route::post("/actped", [PedidoController::class,"actualizar"]);
+Route::get("/delped/{id}",  [PedidoController::class,"mostrarPeds"],["id"=>"id"]);
+Route::post("/delped", [PedidoController::class,"eliminar"]);
+
 
 Auth::routes();
 
