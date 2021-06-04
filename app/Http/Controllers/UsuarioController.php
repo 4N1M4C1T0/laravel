@@ -10,7 +10,7 @@ class UsuarioController extends Controller
     public function guardar(Request $data)
     {
         $data->validate(
-            ['tipo_usu' => 'required',
+            [
                 'nombre_usu'=> 'required | alpha',
                 'correo' => 'required',
                 'contrasenia' => 'required | min:4 | max:32',
